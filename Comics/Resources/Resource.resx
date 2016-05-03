@@ -147,6 +147,9 @@
   <data name="Ru" xml:space="preserve">
     <value>ru</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
   <data name="Welcom" xml:space="preserve">
     <value>Приветствуем</value>
   </data>

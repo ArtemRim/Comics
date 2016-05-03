@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CreateComics";
+}
+
+<h2>CreateComics</h2>
+@using (Html.BeginForm())
+{
+    <input type="text" id="searchText" name="searchText" />
+}
+@section Scripts {
+    <link href="~/Content/Autocomplete/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Content/Autocomplete/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            $("#searchText").autocomplete({
+                source: '@Url.Action("GetTags")'
+                });
+        });
+    </script>
+}

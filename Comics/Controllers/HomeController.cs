@@ -1,4 +1,5 @@
 ﻿using Comics.Filters;
+using Comics.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,29 @@ namespace Comics.Controllers
     {
         public ActionResult Index()
         {
+            if (Request.IsAuthenticated)
+                return RedirectToAction("Main"); ;
             return View();
         }
 
+        public ActionResult Main()
+        {
+            return View();
+        }
 
+        public ActionResult  CreateComics()
+        {
+            return View();
+        }
 
+        public JsonResult GetTags(string partWord)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            List<String> tags;
+            tags = db.Tags.Where(x => x.Name.StartsWith(partWord))
+                .Select(u => u.Name).Distinct().ToList();
+            return Json(tags, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult CultureEn()
         {
             SaveCookieLanguage(Resources.Resource.En);

@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace Comics.Models
 {
@@ -16,6 +18,11 @@ namespace Comics.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        [StringLength(5000, MinimumLength = 10)]
+        public String Information { get; set; }
+        [StringLength(1000, MinimumLength = 10)]
+        public String PhotoURL { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +36,17 @@ namespace Comics.Models
         {
             return new ApplicationDbContext();
         }
-    }
+
+        public DbSet<Cartoon> Cartoons { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Medal> Medals { get; set; }
+        public DbSet<PartDialog> PartDialogs { get; set; }
+        public DbSet<DialogTemplate> DialogTemplates { get; set; }
+        public DbSet<Voice> Voices { get; set; }
+        public DbSet<PageTemplate> PageTemplates { get; set; }
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<Page> Pages { get; set; }
+
+    } 
 }

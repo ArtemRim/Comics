@@ -9,10 +9,8 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top" ">
         <div class="container">
-            <div class="navbar-header">
-            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink(@Resources.Resource.Ru, "CultureRu", "Home")</li>
@@ -22,16 +20,22 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div class="search-field">
+        <div class="form-group col-md-4 col-md-offset-4">
+            <div>
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-default">@Resources.Resource.Search</button>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        <div class="container body-content">
+            @RenderBody()
+            <footer></footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

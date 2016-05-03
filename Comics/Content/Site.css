@@ -20,5 +20,10 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    resize:none;
+}
+
+.search-field{
+    padding-bottom:3%;
+    padding-top:3%;
 }

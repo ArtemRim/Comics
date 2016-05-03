@@ -166,6 +166,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ComicsModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -177,6 +178,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Autocomplete\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Autocomplete\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Autocomplete\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Autocomplete\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Autocomplete\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Autocomplete\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Autocomplete\jquery-ui.css" />
+    <Content Include="Content\Autocomplete\jquery-ui.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -231,6 +240,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Home\CreateComics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
