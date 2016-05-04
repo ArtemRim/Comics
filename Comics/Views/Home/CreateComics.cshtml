@@ -6,17 +6,18 @@
 <h2>CreateComics</h2>
 @using (Html.BeginForm())
 {
-    <input type="text" id="searchText" name="searchText" />
+    <input type="text" id="searchText"/>
 }
+
 @section Scripts {
     <link href="~/Content/Autocomplete/jquery-ui.css" rel="stylesheet" />
     <script src="~/Content/Autocomplete/jquery-ui.js"></script>
-
-    <script>
+<script type="text/javascript">
         $(function () {
             $("#searchText").autocomplete({
                 source: '@Url.Action("GetTags")'
-                });
-        });
-    </script>
+            });
+    });
+</script>
+
 }
