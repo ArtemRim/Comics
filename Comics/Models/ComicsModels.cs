@@ -70,12 +70,12 @@ namespace Comics.Models
         public int PosX { get; set; }
         public int PosY { get; set; }
 
-        [ForeignKey("Part")]
+        [Key, Column(Order = 0)]
         public int IdPart { get; set; }
 
         public virtual Part Part { get; set; }
 
-        [ForeignKey("DialogTemplate")]
+        [Key, Column(Order = 1)]
         public int IdDialogTemplate { get; set; }
 
         public virtual DialogTemplate DialogTemplate { get; set; }
@@ -88,7 +88,7 @@ namespace Comics.Models
         [Key]
         public int Id { get; set; }
         public String URL { get; set; }
-
+        public virtual ICollection<DialogTemplate> DialogTemplates { get; set; }
     }
 
     public class Voice
@@ -96,7 +96,7 @@ namespace Comics.Models
         [Key]
         public int Id { get; set; }
         [ForeignKey("Cartoon")]
-        public String IdCartoon { get; set; }
+        public int IdCartoon { get; set; }
 
         public virtual Cartoon Cartoon { get; set; }
 
@@ -135,7 +135,7 @@ namespace Comics.Models
         public String ElementUrl { get; set; }
         public int ElementPosX { get; set; }
         public int ElementPosY { get; set; }
-
+        public virtual ICollection<DialogTemplate> DialogTemplates { get; set; }
     }
 
     public class Page

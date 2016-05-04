@@ -32,11 +32,6 @@ namespace Comics.Models
         {
         }
 
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
         public DbSet<Cartoon> Cartoons { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
@@ -47,6 +42,13 @@ namespace Comics.Models
         public DbSet<PageTemplate> PageTemplates { get; set; }
         public DbSet<Part> Parts { get; set; }
         public DbSet<Page> Pages { get; set; }
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+
+
+
 
     } 
 }
