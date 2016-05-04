@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
 
 namespace Comics.Models
 {
@@ -23,6 +24,13 @@ namespace Comics.Models
         public String Information { get; set; }
         [StringLength(1000, MinimumLength = 10)]
         public String PhotoURL { get; set; }
+
+        public virtual ICollection<UserMedal> UserMedals { get; set; }
+
+        public ApplicationUser()
+        {
+            UserMedals = new HashSet<UserMedal>();
+        }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

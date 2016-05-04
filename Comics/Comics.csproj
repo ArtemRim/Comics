@@ -165,6 +165,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605041734596_initialize.cs" />
+    <Compile Include="Migrations\201605041734596_initialize.Designer.cs">
+      <DependentUpon>201605041734596_initialize.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ComicsModels.cs" />
@@ -179,6 +183,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Comics.mdf" />
+    <Content Include="App_Data\Comics_log.ldf">
+      <DependentUpon>Comics.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Autocomplete\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\Autocomplete\images\ui-icons_555555_256x240.png" />
     <Content Include="Content\Autocomplete\images\ui-icons_777620_256x240.png" />
@@ -244,9 +252,7 @@
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Home\CreateComics.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -256,6 +262,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201605041734596_initialize.resx">
+      <DependentUpon>201605041734596_initialize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

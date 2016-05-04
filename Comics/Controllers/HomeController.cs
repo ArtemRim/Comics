@@ -5,16 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Net;
+using System.Net.Http;
 namespace Comics.Controllers
 {
     [Culture]
     public class HomeController : Controller
     {
+        ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             if (Request.IsAuthenticated)
-                return RedirectToAction("Main"); ;
+                return RedirectToAction("Main");
             return View();
         }
 
@@ -28,14 +30,16 @@ namespace Comics.Controllers
             return View();
         }
 
-        public JsonResult GetTags(string partWord)
+        [HttpGet]
+        public JsonResult GetTags(string term)
         {
-            ApplicationDbContext db = new ApplicationDbContext();
+            
             List<String> tags;
-            tags = db.Tags.Where(x => x.Name.StartsWith(partWord))
+            tags = db.Tags.Where(x => x.Name.StartsWith(term))
                 .Select(u => u.Name).Distinct().ToList();
             return Json(tags, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult CultureEn()
         {
             SaveCookieLanguage(Resources.Resource.En);

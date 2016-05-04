@@ -13,17 +13,17 @@ namespace Comics.Models
         public int Id { get; set; }
         [ForeignKey("User")]
         public String IdUser { get; set; }
-
         public virtual ApplicationUser User { get; set; }
-
+        
 
         public String Name { get; set; }
         public DateTime Date { get; set; }
-        public virtual ICollection<Tag> Tags { get; set; }
+
+        public virtual ICollection<CartoonTag> CartoonTag { get; set; }
 
         public Cartoon()
         {
-            Tags = new HashSet<Tag>();
+            CartoonTag = new HashSet<CartoonTag>();
         }
     }
 
@@ -55,12 +55,108 @@ namespace Comics.Models
         public int Id { get; set; }
 
         public String ImageURL { get; set; }
-
-        public virtual ICollection<ApplicationUser> Users { get; set; }
+        
+        public virtual ICollection<UserMedal> UserMedals { get; set; }
 
         public Medal()
         {
-            Users = new HashSet<ApplicationUser>();
+            UserMedals = new HashSet<UserMedal>();
+        }
+    }
+
+
+    public class UserMedal
+    {
+
+        [Key, Column(Order = 0)]
+        [ForeignKey("Medal")]
+        public int IdMedal { get; set; }
+        public virtual Medal Medal { get; set; }
+
+        [Key, Column(Order = 1)]
+        [ForeignKey("User")]
+        public String IdUser { get; set; }
+        public virtual ApplicationUser User { get; set; }
+
+    }
+
+
+
+
+
+    public class Voice
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [ForeignKey("Cartoon")]
+        public int IdCartoon { get; set; }
+        public virtual Cartoon Cartoon { get; set; }
+
+        public int Mark { get; set; }
+    }
+
+    public class Tag
+    {
+        [Key]
+        public int Id { get; set; }       
+        public String Name { get; set; }
+
+        public virtual ICollection<CartoonTag> CartoonTag { get; set; }
+        public Tag()
+        {
+            CartoonTag = new HashSet<CartoonTag>();
+        }
+
+    }
+
+
+    public class CartoonTag
+    {
+        [Key, Column(Order = 0)]
+        [ForeignKey("Tag")]
+        public int IdTag { get; set; }
+        public virtual Tag Tag { get; set; }
+
+        [Key, Column(Order = 1)]
+        [ForeignKey("Cartoon")]
+        public int IdCartoon { get; set; }
+        public virtual Cartoon Cartoon { get; set; }
+
+    }
+
+    public class PageTemplate
+    {
+        [Key]
+        public int Id { get; set; }
+        public String URL { get; set; }
+    }
+
+    public class Part
+    {
+        [Key]
+        public int Id { get; set; }
+
+        public String ElementUrl { get; set; }
+        public int ElementPosX { get; set; }
+        public int ElementPosY { get; set; }
+        public virtual ICollection<PartDialog> PartDialogs { get; set; }
+
+        public Part()
+        {
+            PartDialogs = new HashSet<PartDialog>();
+        }
+    }
+
+    public class DialogTemplate
+    {
+        [Key]
+        public int Id { get; set; }
+        public String URL { get; set; }
+        public virtual ICollection<PartDialog> PartDialogs { get; set; }
+        public DialogTemplate()
+        {
+            PartDialogs = new HashSet<PartDialog>();
         }
     }
 
@@ -71,71 +167,15 @@ namespace Comics.Models
         public int PosY { get; set; }
 
         [Key, Column(Order = 0)]
+        [ForeignKey("Part")]
         public int IdPart { get; set; }
-
         public virtual Part Part { get; set; }
 
         [Key, Column(Order = 1)]
+        [ForeignKey("DialogTemplate")]
         public int IdDialogTemplate { get; set; }
-
         public virtual DialogTemplate DialogTemplate { get; set; }
 
-    }
-
-
-    public class DialogTemplate
-    {
-        [Key]
-        public int Id { get; set; }
-        public String URL { get; set; }
-        public virtual ICollection<DialogTemplate> DialogTemplates { get; set; }
-    }
-
-    public class Voice
-    {
-        [Key]
-        public int Id { get; set; }
-        [ForeignKey("Cartoon")]
-        public int IdCartoon { get; set; }
-
-        public virtual Cartoon Cartoon { get; set; }
-
-        public int Mark { get; set; }
-    }
-
-    public class Tag
-    {
-        [Key]
-        public int Id { get; set; }
-
-        public virtual ICollection<Cartoon> Cartoons { get; set; }
-
-        public String Name { get; set; }
-
-        public Tag()
-        {
-            Cartoons = new HashSet<Cartoon>();
-        }
-
-    }
-
-    public class PageTemplate
-    {
-        [Key]
-        public int Id { get; set; }
-        public String URL { get; set; }
-
-
-    }
-    public class Part
-    {
-        [Key]
-        public int Id { get; set; }
-
-        public String ElementUrl { get; set; }
-        public int ElementPosX { get; set; }
-        public int ElementPosY { get; set; }
-        public virtual ICollection<DialogTemplate> DialogTemplates { get; set; }
     }
 
     public class Page
@@ -144,12 +184,12 @@ namespace Comics.Models
         public int Id { get; set; }
         [ForeignKey("Cartoon")]
         public int IdCartoon { get; set; }
-
         public virtual Cartoon Cartoon { get; set; }
+
 
         [ForeignKey("PageTemplate")]
         public int IdPageTemplate { get; set; }
-
         public virtual PageTemplate PageTemplate { get; set; }
+
     }
 }
