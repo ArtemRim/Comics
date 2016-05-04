@@ -28,11 +28,11 @@ namespace Comics.Controllers
             return View();
         }
 
-        public JsonResult GetTags(string term)
+        public JsonResult GetTags(string partWord)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            List<String> tags = new List<String>();
-            tags = db.Tags.Where(x => x.Name.StartsWith(term))
+            List<String> tags;
+            tags = db.Tags.Where(x => x.Name.StartsWith(partWord))
                 .Select(u => u.Name).Distinct().ToList();
             return Json(tags, JsonRequestBehavior.AllowGet);
         }
