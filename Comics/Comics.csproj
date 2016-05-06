@@ -165,9 +165,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605041734596_initialize.cs" />
-    <Compile Include="Migrations\201605041734596_initialize.Designer.cs">
-      <DependentUpon>201605041734596_initialize.cs</DependentUpon>
+    <Compile Include="Migrations\201605060522092_initial.cs" />
+    <Compile Include="Migrations\201605060522092_initial.Designer.cs">
+      <DependentUpon>201605060522092_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -203,6 +203,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\compressed.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -213,6 +214,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\MyScript.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -251,6 +254,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Home\CreateComics.cshtml" />
+    <Content Include="Views\Home\ComicsEditor.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -262,8 +266,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605041734596_initialize.resx">
-      <DependentUpon>201605041734596_initialize.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605060522092_initial.resx">
+      <DependentUpon>201605060522092_initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.resx">

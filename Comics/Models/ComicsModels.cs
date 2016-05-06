@@ -27,6 +27,7 @@ namespace Comics.Models
         }
     }
 
+
     public class Comment
     {
         [Key]
@@ -81,9 +82,6 @@ namespace Comics.Models
     }
 
 
-
-
-
     public class Voice
     {
         [Key]
@@ -95,6 +93,8 @@ namespace Comics.Models
 
         public int Mark { get; set; }
     }
+
+
 
     public class Tag
     {
@@ -130,7 +130,39 @@ namespace Comics.Models
         [Key]
         public int Id { get; set; }
         public String URL { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
     }
+
+
+    public class Line
+    {
+        [Key]
+        public int Id { get; set; }
+        public int StartX { get; set; }
+        public int StartY { get; set; }
+        public int EndX { get; set; }
+        public int EndY { get; set; }
+
+        [ForeignKey("PageTemplate")]
+        public int IdPageTemplate { get; set; }
+        public virtual PageTemplate PageTemplate { get; set; }
+    }
+
+
+    public class Text
+    {
+        [Key]
+        public int Id { get; set; }
+        public String Inscription { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
+
+        [ForeignKey("Part")]
+        public int IdPart { get; set; }
+        public virtual Part Part { get; set; }
+    }
+
 
     public class Part
     {

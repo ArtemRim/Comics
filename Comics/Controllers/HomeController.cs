@@ -30,6 +30,13 @@ namespace Comics.Controllers
             return View();
         }
 
+        public ActionResult ComicsEditor()
+        {
+            return View();
+        }
+
+
+
         [HttpGet]
         public JsonResult GetTags(string term)
         {

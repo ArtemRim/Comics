@@ -50,6 +50,8 @@ namespace Comics.Models
         public DbSet<PageTemplate> PageTemplates { get; set; }
         public DbSet<Part> Parts { get; set; }
         public DbSet<Page> Pages { get; set; }
+        public DbSet<Text> Textes { get; set; }
+        public DbSet<Line> Lines { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
