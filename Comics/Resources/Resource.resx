@@ -153,4 +153,22 @@
   <data name="Welcom" xml:space="preserve">
     <value>Приветствуем</value>
   </data>
+  <data name="ApiKey" xml:space="preserve">
+    <value>391773212883889</value>
+  </data>
+  <data name="ApiSecret" xml:space="preserve">
+    <value>W1_ObHCYghGbXoTQ8ycs3i8KWlc</value>
+  </data>
+  <data name="CloudName" xml:space="preserve">
+    <value>dhye3oycy</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="LoadImage" xml:space="preserve">
+    <value>Загрузка изображения/видео</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
 </root>

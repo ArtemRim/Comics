@@ -38,3 +38,26 @@ textarea {
 }
 
 
+.DialogTemplate{
+    width:6%;
+    height:6%;
+}
+
+.PageTemplate{
+    position:absolute;
+    border: 4px solid black; 
+    background: #ffffff; 
+    overflow:hidden;
+}
+
+.linkLoadImage{
+    position:absolute;
+    margin-top:100px;
+    margin-left:15%;
+}
+
+.image{
+    width:100%;
+    height:auto;
+    position:absolute;
+}

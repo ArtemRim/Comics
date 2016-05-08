@@ -144,4 +144,13 @@
   <data name="Welcom" xml:space="preserve">
     <value>Hello</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LoadImage" xml:space="preserve">
+    <value>Loading image/video</value>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Upload</value>
+  </data>
 </root>

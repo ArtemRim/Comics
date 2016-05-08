@@ -61,6 +61,42 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 391773212883889.
+        /// </summary>
+        public static string ApiKey {
+            get {
+                return ResourceManager.GetString("ApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to W1_ObHCYghGbXoTQ8ycs3i8KWlc.
+        /// </summary>
+        public static string ApiSecret {
+            get {
+                return ResourceManager.GetString("ApiSecret", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отменить.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to dhye3oycy.
+        /// </summary>
+        public static string CloudName {
+            get {
+                return ResourceManager.GetString("CloudName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Подтвердить пароль.
         /// </summary>
         public static string ConfirmPassword {
@@ -93,6 +129,24 @@ namespace Resources {
         public static string Language {
             get {
                 return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загрузить.
+        /// </summary>
+        public static string Load {
+            get {
+                return ResourceManager.GetString("Load", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загрузка изображения/видео.
+        /// </summary>
+        public static string LoadImage {
+            get {
+                return ResourceManager.GetString("LoadImage", resourceCulture);
             }
         }
         

@@ -26,6 +26,7 @@ namespace Comics.Controllers
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            
         }
 
         public ApplicationSignInManager SignInManager

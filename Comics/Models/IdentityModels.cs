@@ -33,32 +33,5 @@ namespace Comics.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
 
-        public DbSet<Cartoon> Cartoons { get; set; }
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<Comment> Comments { get; set; }
-        public DbSet<Medal> Medals { get; set; }
-        public DbSet<PartDialog> PartDialogs { get; set; }
-        public DbSet<DialogTemplate> DialogTemplates { get; set; }
-        public DbSet<Voice> Voices { get; set; }
-        public DbSet<PageTemplate> PageTemplates { get; set; }
-        public DbSet<Part> Parts { get; set; }
-        public DbSet<Page> Pages { get; set; }
-        public DbSet<Text> Textes { get; set; }
-        public DbSet<Line> Lines { get; set; }
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
-
-
-
-    } 
 }
