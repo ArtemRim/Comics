@@ -55,5 +55,12 @@ namespace Comics.Repositories
             if (part != null)
                 db.Parts.Remove(part);
         }
+
+        public void DeletePage(int idPageTemplate)
+        {
+            var parts = db.Parts.Where(u => u.IdPageTemplate == idPageTemplate);
+            foreach (var part in parts)
+                db.Parts.Remove(part);
+        }
     }
 }

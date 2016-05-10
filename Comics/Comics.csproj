@@ -109,9 +109,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -165,6 +162,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComicsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Filters\CultureAttribute.cs" />
@@ -220,7 +218,8 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
-    <Compile Include="ViewModel\PageTemplateJsonObject.cs" />
+    <Compile Include="ViewModel\PartViewModel.cs" />
+    <Compile Include="ViewModel\ResultUploadViewModel.cs" />
     <Compile Include="ViewModel\Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +237,20 @@
     <Content Include="Content\Autocomplete\jquery-ui.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fill.png" />
+    <Content Include="Content\slider-bg.png" />
+    <Content Include="Content\slider-button.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\ToolBarEditor\icons\edit.png" />
+    <Content Include="Content\ToolBarEditor\icons\favorite.png" />
+    <Content Include="Content\ToolBarEditor\icons\fullscreen.png" />
+    <Content Include="Content\ToolBarEditor\icons\info.png" />
+    <Content Include="Content\ToolBarEditor\icons\label.png" />
+    <Content Include="Content\ToolBarEditor\icons\next.png" />
+    <Content Include="Content\ToolBarEditor\icons\prev.png" />
+    <Content Include="Content\ToolBarEditor\icons\shopping_cart.png" />
+    <Content Include="Content\ToolBarEditor\icons\zoom_in.png" />
+    <Content Include="Content\ToolBarEditor\icons\zoom_out.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -249,6 +262,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -295,9 +311,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
-    <Content Include="Views\Home\CreateComics.cshtml" />
-    <Content Include="Views\Home\ComicsEditor.cshtml" />
     <Content Include="Views\Home\Load.cshtml" />
+    <Content Include="Views\Comics\ComicsEditor.cshtml" />
+    <Content Include="Views\Comics\CreateComics.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
